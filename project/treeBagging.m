@@ -19,7 +19,7 @@ e
 data = load('data/phy_test.dat');
 Xblind =  data(:,[3:21,25:30,32:45,49:56,58:size(data,2)]);
 Yblind = str2num(cell2mat(predict(b,Xblind)));
-submission = [caseID  Yblind];
+submission = [data(:,1),  Yblind];
 dlmwrite('results/treebag.txt',submission,'delimiter',' ', 'precision',10); 
 
 %errs(1,find(errs))
