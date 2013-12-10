@@ -15,4 +15,5 @@ end
 
 %dlmwrite('data/missingData2NanAll.txt',data,'delimiter','\t');
 
-filled = knnimpute(data, 'Distance','euclidean');
+filled = knnimpute(data, 50,'Distance','euclidean');
+dlmwrite('data/filled50.txt',filled,'delimiter','\t');
