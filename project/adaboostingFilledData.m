@@ -15,6 +15,7 @@ e
 ens = fitensemble(X,Y,'AdaBoostM1',nt,'Tree');
 
 Xblind =  data(50001:end,3:end);
+Xblind = normolize(Xblind);
 Yblind = predict(ens,Xblind);
 submission = [(50001:150000)',  Yblind];
 dlmwrite('results/adaboostfilled.txt',submission,'delimiter',' ', 'precision',10); 
