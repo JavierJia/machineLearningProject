@@ -5,7 +5,7 @@ X = data(:,[3:21,25:30,32:45,49:56,58:size(data,2)]);
 [Xtr,Xte,Ytr,Yte] = splitData(X,Y,0.8);
 
 %for nc = round(1000/100.0 * logspace(0,2)),
-nc = 200;
+nc = 100;
 b = TreeBagger(nc,Xtr,Ytr,'oobpred','on');
 plot(oobError(b))
 xlabel('number of grown trees')
